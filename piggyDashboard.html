@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>piggyvest | Dashboard</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            height: 100vh;
+            width: 15%;
+            background-color: RGB(6, 40, 99);
+            position: fixed;
+            padding: 28px;
+            color: white;
+        }
+
+        .div1 img {
+            width: 100px;
+        }
+
+        .div2 {
+            width: 75%;
+            padding: 30px;
+            margin-left: 20%;
+
+
+        }
+
+        .general {
+            width: 100%;
+            display: flex;
+        }
+
+        .top img {
+            width: 50px;
+            height: 50px;
+            float: right;
+        }
+
+        .top p {
+            color: grey;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: tahoma;
+        }
+
+        .scroll {
+
+            overflow-x: scroll;
+
+        }
+
+        .row div {
+            width: 350px;
+            height: 150px;
+            border-radius: 15px;
+            display: flex;
+
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+
+
+            display: flex;
+            align-items: center;
+
+        }
+
+
+        .content i {
+            margin-right: 20px;
+        }
+
+        .row {
+            width: 1500px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .top,
+        .scroll {
+            width: 100%;
+        }
+
+        .below {
+            float: right;
+            width: 35%;
+
+        }
+
+        .complete img {
+            width: 100%;
+            height: 120px;
+            border-radius: 15px;
+        }
+
+        .download img {
+            width: 45%;
+            height: 50px;
+            border-radius: 15px;
+        }
+
+        .tolani img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+        }
+
+        .below1 {
+            width: 60%;
+
+        }
+
+        /* 8619.60 */
+
+        .below1 div {
+            width: 90%;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 5px 5px 5px 0;
+            /* display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; */
+            padding-left: 30px;
+        }
+
+        .radio-container {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .radio-container input[type="radio"],
+        .radio-container label {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .content {
+            margin-left: 80px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .div1 i {
+            font-size: 25px;
+            color: white;
+            margin-top: 40px;
+            margin-left: 10px;
+            margin-right: 30px;
+        }
+
+        .label {
+            font-size: 20px;
+            width: 150px;
+        }
+
+        .saves {
+            width: 75%;
+            padding: 30px;
+            margin-left: 20%;
+        }
+
+        .invests {
+            width: 75%;
+            padding: 30px;
+            margin-left: 20%;
+        }
+
+        .acounts {
+            width: 75%;
+            padding: 30px;
+            margin-left: 20%;
+            overflow: hidden;
+        }
+
+        .saves-box {
+            width: 32%;
+            height: 200px;
+            padding: 20px;
+            margin: 0 1% 20px 0;
+            border-radius: 10px;
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: top;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .saves-box p {
+            color: grey;
+            font-size: 15px;
+            font-weight: 400;
+            font-family: tahoma;
+        }
+
+        .saves-box h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        .account-box div {
+            width: 100%;
+            height: 70px;
+            border-radius: 10px 10px 10px 0;
+            border: 1px grey solid;
+            margin-bottom: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 30px;
+            font-weight: 500;
+        }
+
+        .account-box i {
+            font-size: 25px;
+            font-weight: 400;
+            margin-right: 5px;
+        }
+
+        .default {
+            width: 100%;
+            margin-top: 30px;
+            margin-left: 100px;
+            margin-bottom: 50px;
+        }
+
+        .default div {
+            width: 35%;
+            height: 60px;
+            border: 1px grey solid;
+            border-radius: 10px 10px 10px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: inline-block;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            padding: 10px;
+            padding-top: 20px;
+        }
+
+        .default p {
+            color: grey;
+            font-size: 14px;
+            margin-top: 3px;
+            font-weight: 400;
+            font-family: tahoma;
+        }
+
+        .default h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: green;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        #transferPage {
+            position: fixed;
+            background-color: white;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            width: 400px;
+            padding-left: 30px;
+            transition: right 0.5s ease-out;
+            right: -400px;
+            display: none;
+            top: 0;
+        }
+
+        #transferPage label {
+            font-size: 15px;
+            color: darkgrey;
+            font-weight: 400;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        #transferPage input {
+            border: none;
+            width: 350px;
+            height: 60px;
+            background-color: aliceblue;
+            outline: none;
+            border-radius: 10px;
+            padding-left: 10px;
+            
+        }
+        
+
+        #transferPage button {
+            width: 350px;
+            height: 60px;
+            border-radius: 10px 10px 10px 0;
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+
+        #transferPage i.fa-close {
+            right: 2px;
+            top: 3;
+            margin-bottom: 50px;
+            margin-top: 15px;
+
+        }
+
+        /* #homes{
+            background-color: white;
+        color: darkblue;
+        border-radius: 5px 5px 5px 0;
+        padding: 5px 15px;
+        } */
+        .profile-picture {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .hover-effect {
+            position: absolute;
+            bottom: 0;
+            /* left: 0; */
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: black;
+            height: 40px;
+            text-align: center;
+            padding: 5px 0;
+            display: none;
+            transition: opacity 0.3s;
+        }
+
+        .hover-effect img {
+            margin-right: 5px;
+        }
+
+        .profile-picture:hover .hover-effect {
+            display: block;
+        }
+
+
+
+
+
+        .areyousure {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: none;
+            border-top: 1px black solid;
+            border-radius: 50px 50px 0 0;
+            padding-top: 40px;
+            position: absolute;
+            bottom: 0px;
+            background-color: white;
+        }
+
+        .areyousure button {
+            /* width: 20px;
+            height: 20px; */
+            background-color: blue;
+            color: white;
+            border-radius: 100px;
+            font-size: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #enter-transaction-pin input {
+            border: none;
+            border-bottom: 2px blue solid;
+            width: 50px;
+        }
+
+        #enter-transaction-pin {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* height: 200px;
+            width: 300px; */
+            border: none;
+            border-top: 1px black solid;
+            border-radius: 50px 50px 0 0;
+            padding-top: 40px;
+            position: absolute;
+            bottom: 0px;
+            display: none;
+            background-color: white;
+        }
+
+        .thumb {
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+        }
+
+        .receipt {
+            height: 60px;
+            width: 60px;
+        }
+        .accountInput{
+            outline: none;
+        }
+
+        #successful-div {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* height: 350px;
+            width: 300px; */
+            border: none;
+            border-top: 1px black solid;
+            border-radius: 50px 50px 0 0;
+            padding-top: 40px;
+            position: absolute;
+            bottom: 0px;
+            display: none;
+            background-color: white;
+        }
+
+        #confirmation-page {
+            background-color: white;
+            height: 100vh;
+            color: blue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #translogo{
+            padding-top: 150px;
+            margin-right: 120px;
+            /* text-align: center; */
+        }
+        #translogo img{
+            /* top: 50vh; */
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="general">
+        <div class="div1">
+            <i class="fa fa-bars" style="margin-top: 0;"></i>
+            <img src="piggyvest-logo2.svg" alt=""><br><br>
+            <i class="fa fa-home"></i>
+            <span class="label" for="" id="homes" onclick="showHome(); home(event)">Home</span><br>
+            <i class="fa fa-bullseye"></i>
+            <span class="label" for="" id="savings" onclick="showSavings(); home(event)"> Savings </span><br>
+            <i class="fa fa-rocket"></i>
+            <span class="label" for="" id="invest" onclick="showInvests(); home(event)"> Invest </span><br>
+            <i class="fas fa-user-alt"></i>
+            <span class="label" for="" id="account" onclick="showAccounts(); home(event)"> Account
+            </span><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <i class="fa fa-power-off"></i>
+            <span class="label" for="" onclick="Logout()"> Logout</span>
+        </div>
+
+        <div id="homess" class="div2">
+            <div class="top">
+                <img src="default_avatar_v4.png" alt="">
+                <h1 id="customer-name"></h1>
+                <p>wash your hand, its launch time 🌙 </p>
+                <p>Acount Number: <span id="bankEase-account"></span></p>
+
+                <div style="margin-bottom: 20px;">
+                    <div style="float: right; ">
+                        <button
+                            style="height: 40px; width: 150px; border: none; background-color: blue; color: white; border-radius: 10px 10px 10px 0;"
+                            onclick="TransferBtn()"><i class="fa fa-paper-plane"></i> Quick Transfer</button>
+                        <div id="transferPage">
+                            <div id="transfermoney">
+                                <i class="fa fa-close" style="font-size:36px" onclick="cancel()"></i>
+                                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: blue;">
+                                    Quick Transfer</h1>
+                                <p style="font-size: 15px; margin-bottom: 30px;">Enter account number and amount you
+                                    wish to transfer</p>
+                                <br><br>
+                                <label for="">Enter account number</label><br>
+                                <input type="number" name="" maxlength="10" id="input-accountNumber" placeholder="Enter account number"
+                                    oninput="verifyAccountNumber()" style="margin-bottom: 50px;">
+                                <h6 class="">Select from Beneficiaries</h6><br>
+                                <div class="" id="display-account-result-div">
+                                    <textarea name="" id="display-verification-result-notfound" value="" cols="40"
+                                        rows="3" class="" disabled></textarea>
+                                    <input type="text" name="" id="display-verification-result-found" value="" class=""
+                                        disabled>
+                                </div>
+
+                                <label for="">Enter amount you wish to transfer</label><br>
+                                <input type="number" name="" id="transfer-amount" placeholder="Enter amount you wish to transfer" style="margin-bottom: 50px;" oninput="checkTransferAmount()"><br>
+                                <button onclick="gotoConfirmationPage()" id="transfer-btn" disabled>PROCEED</button>
+                            </div>
+                            <div class="" id="confirmation-page" style="display: none;">
+                                <div id="translogo">
+                                    <img src="./piggyvest-logo.png" alt="">
+                                </div>
+                                <div class="areyousure" style="width: 100%; height: 200px;">
+                                    <h6 class="">Are you sure you want to send</h6>
+                                    <div class="">
+                                        <h4 class="">₦</h4>
+                                        <h3 id="amount-to-transfer"></h3>
+                                    </div>
+                                    <h2 class="">to <span id="account-details">Durodola Abdulhameed</span> - Piggyvest
+                                    </h2>
+                                    <div class="">
+                                        <button type="submit" class="" onclick="gotoEnterTransferPin()" style="width: 50px; height: 50px; margin-right: 50px; border-radius: 100px;">Yes</button>
+                                        <button type="submit" class="" onclick="goBack()" style="width: 50px; height: 50px; border-radius: 100px;">No</button>
+                                    </div>
+                                </div>
+                                <div class="" id="enter-transaction-pin" style="width: 100%; height: 200px;">
+                                    <div class="">
+                                        <div class="">
+                                            <div class="">
+                                                   <i class="fa fa-close" onclick="closeModal()"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="">
+                                            <h4 class="">Enter Transaction Pin</h4>
+                                            <input type="password" name="" id="passDigit1" class="" maxlength="1"
+                                                oninput="moveToNext(this, 'passDigit2')" required>
+                                            <input type="password" name="" id="passDigit2" class="" maxlength="1"
+                                                oninput="moveToNext(this, 'passDigit3')" required>
+                                            <input type="password" name="" id="passDigit3" class="" maxlength="1"
+                                                oninput="moveToNext(this, 'passDigit4')" required>
+                                            <input type="password" name="" id="passDigit4" class="" maxlength="1"
+                                                required oninput="validatesPin()">
+                                        </div><br><br>
+                                        <h4 class="">Forget Transaction Pin?</h4>
+                                    </div>
+                                </div>
+                                <div class="" id="loader">
+                                    <div class="">
+                                        <div class=""></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="" id="successful-div" style="width: 100%; height: 250px;">
+                                    <div class="">
+                                        <!-- <div class="">
+                                            <img src="../images/close-icon.png" alt="" class="" onclick="gotoDashboard()">
+                                        </div> -->
+                                        <div class="" >
+                                            <img src="./thumb_up_completed.png" alt="" class="thumb">
+                                        </div><br>
+                                        <h4 class="">Transfer successful</h4>
+                                        <h2 class="">₦<span id="transfer-successful-amount"></span></h2>
+                                        <h6 class="">The recipient account is expected to be credited within
+                                            5<br>minutes subjected to notification by the bank</h6>
+                                        <div class="">
+                                            <button type="submit" class="" onclick="openReceiptContent()" style="width: 50px; height: 50px;">
+                                                <div class="">
+                                                    <img src="../images/mdi_monitor-share.png" alt="" class="receipt">
+                                                </div>
+                                                <h4 class="">Share Receipt</h4>
+                                            </button>
+                                            <button type="submit" class="" style="width: 50px; height: 50px;">
+                                                <div class="">
+                                                    <img src="../images/ci_user-add.png" alt="" class="receipt">
+                                                </div>
+                                                <h4 class="">Add to favourite</h4>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <i class="fa fa-refresh" style="color: grey;"></i>
+                </div>
+            </div>
+            <div class="scroll">
+                <div class="row">
+                    <div style="background-color: RGB(13, 96, 216);">
+                        <div class="content">
+                            <i class=" fa fa-shield-alt" style="font-size:44px;"></i>
+                            <span>
+                            Total savings<br>
+                            &#8358;<span id="balance"></span>
+                        </span>
+                        </div>
+                    </div>
+                    <div style="background-color: RGB(121, 19, 229);">
+                        <div class="content">
+                            <i class="fa fa-line-chart" style="font-size:44px;"></i>
+                            <span>
+                                Total Investments<br>
+                                &#8358;<span id="balances"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div style="background-color: RGB(34, 34, 34);">
+                        <div class="content">
+                            <i class="fas fa-dollar-sign" style="font-size:44px;"></i>
+                            <span>
+                                Flex Dollar <br>
+                                $<span id="balancess"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div style="background-color: RGB(255, 255, 255); color: black; box-shadow: 0 0 2px black;">
+                        <div class="content" style="color: black;">
+                            <i class="fa fa-film" style="font-size:44px; color: pink;"></i>
+                            Flex Naira <br>
+                            &#8358;0.00
+                        </div>
+                    </div>
+                    <div style="background-color: RGB(117, 63, 246);">
+                        <div class="content">
+                            <i class="fa fa-at" style="font-size:44px;"></i>
+                            Link PocketApp <br>
+                            &#8358;****
+                        </div>
+                    </div>
+                </div>
+            </div><br><br><br>
+
+            <div>
+                <div class="below">
+                    <div class="complete">
+                        COMPLETE YOUR SETUP
+                        <img src="complete-setup-v3.jpg" alt="">
+                    </div><br><br>
+                    <div class="download">
+                        DOWNLOAD THE MOBILE APP <br>
+                        <img src="iosbadge-101-image.png" alt="">
+                        <img src="google-play-badge.png" alt="">
+                    </div><br><br>
+                    <div class="tolani">
+                        <small> #MEETAPIGGYVESTSAVER: TOLANI AYENI</small>
+                        <img src="smallpic7fcb21afd3.jpeg" alt="">
+                    </div>
+                </div>
+
+                <div class="below1">
+
+                    <div class="radio-container">
+                        <input type="radio" name="below1" id="">
+                        <label for=""> Verify your email address</label>
+                    </div>
+                    <br><br>
+                    <div class="radio-container">
+                        <input type="radio" name="below1" id="">
+                        <label for=""> Add your BVN or NIN now!</label>
+                    </div><br><br>
+                    <div class="radio-container">
+                        <input type="radio" name="below1" id="">
+                        <label for=""> Tell us more abour yourself </label>
+                    </div><br><br>
+                    <div class="radio-container" style="width: 250px;">
+                        <input type="radio" name="below1" id="">
+                        <label for=""> Securely add a valid debit card</label>
+                    </div><br><br>
+                    <div class="radio-container">
+                        <input type="radio" name="below1" id="">
+                        <label for=""> Set your security uestion now! 🔐🔐</label>
+                    </div><br><br>
+                    <div class="radio-container">
+                        <input type="radio" name="below1" id="">
+                        <label for=""> Refer a friend, earn #1,000 bonus 🎉</label>
+                    </div><br><br>
+                    <div class="radio-container" style="height: 80px;">
+                        <i class="fa fa-thumbs-up" style="font-size: 24px; margin-right: 20px;"></i>
+                        <label for="">See your recent activities <br>
+                            see you most recent activitieson piggyvest</label>
+                    </div><br><br>
+                    <div class="radio-container" style="height: 80px;">
+                        <i class="fa fa-lock" style="font-size: 24px; margin-right: 20px;"></i>
+                        <label for="container" style="font-size: 10px;">
+                            Create a safelock <br>
+                            Avoid spending temptation. Tap to create a safelock</label>
+                    </div><br><br>
+                    Recent Activities
+                    <div class="radio-container" style="height: 80px;">
+                        <img src="favicon-16x16.webp" style="color: white; margin-right: 20px;">
+                        <label for="">Just registered <br>
+                            2 days ago</label>
+                    </div><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <div id="saves" class="saves">
+        <div class="top">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Savings</h1>
+            <p>let see how well you are doing</p><br>
+            <div>
+                <div style="float: right; width: 33%;">
+                    <p style="margin-top: 0;">complete your setup</p><br>
+                    <img src="./complete-setup-v3.jpg" alt="" style="width: 100%; height: 115px; border-radius: 10px;">
+                </div>
+
+                <div
+                    style="height: 150px; width: 65%; border: 1px gainsboro solid; border-radius: 10px 10px 10px 0; display: flex; flex-direction: column; justify-content: center;">
+                    <div style="padding-left: 30px;">
+                        <p>Total balance</p>
+                        <span
+                            style="font-size: 40px; font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: blue;">&#8358;100,000</span>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+
+        <div class="saves-box" style="background-color:
+            RGB(204, 240, 254); color: blue;">
+            <i class="fa fa-shield-alt" style="margin-top: 10px; font-size: 30px; color: blue;"></i><br>
+            <h1>Piggybank</h1> <br>
+            <p>strict savings automatically.Daily,weekly or Monthly. 10% p.a</p>
+            <h1>&#8358;100,000</h1>
+        </div>
+        <div class="saves-box" style="background-color:
+            RGB(255, 234, 245); color:hotpink;">
+            <i class="fa fa-film" style="font-size:30px; color: hotpink; margin-top: 10px;"></i><br>
+            <h1>Flex Naira</h1><br>
+            <p>Flexible savings for emergencies.Free transfer,widthdrawal etc. 8% p.a </p>
+            <h1>&#8358;0.00</h1>
+        </div>
+        <div class="saves-box" style="background-color: RGB(231, 246, 255); color: blue;">
+            <i class="fa fa-lock" style="margin-top: 10px; font-size: 30px; color: blue;"></i><br>
+            <h1>Savelock</h1> <br>
+            <p>Lock funds to avoid temptation.Upfront intrest up to 13% p.a </p>
+            <h1>&#8358;0.00</h1>
+        </div>
+        <div class="saves-box" style="background-color:
+            RGB(220, 255, 235); color: green;">
+            <i class="fa fa-bullseye" style="color: green;margin-top: 10px; font-size: 30px;"></i><br>
+            <h1>Target</h1> <br>
+            <p>Reach your uniqe individual savings goals. 9% p.a </p>
+            <h1>&#8358;0.00</h1>
+        </div>
+        <div class="saves-box" style="background-color:
+            RGB(239, 244, 245)">
+            <i class="fas fa-dollar-sign" style="margin-top: 10px; font-size: 30px;"></i><br>
+            <h1>Flex Dollar</h1><br>
+            <p>Save and grow your wealth in dollars.Up to 7% p.a in dollars</p>
+            <h1>$100,000</h1>
+        </div>
+        <div class="saves-box" style="background-color:
+            RGB(241, 236, 254); color: purple;">
+            <i class="fa fa-at" style="margin-top: 10px; color: purple; font-size: 30px;"></i><br>
+            <h1>PocketApp&reg;</h1><br>
+            <p>widthdraw your savings to your pocket faster</p>
+            <h1>Connect account</h1>
+        </div>
+
+    </div>
+
+    <div id="invests" class="invests">
+        <div class="top">
+            <div>
+                <img src="default_avatar_v4.png" alt="">
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Investify</h1>
+            </div><br><br>
+            <div>
+                <div style="float: right; width: 30%;">
+                    <div
+                        style="width: 90%; height: 100px; border-radius: 10px 10px 10px 0; border: 1px gray solid; padding-left: 15px;">
+                        <p>Expected Roi</p>
+                        <h2 style="color: purple; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Up to
+                            25%</h2>
+                        <p>Per Annum</p>
+                    </div><br><br>
+                    <p>Complete your setup</p>
+                    <img src="./complete-setup-v3.jpg" alt="" style=" width: 100%; height: 100px; border-radius: 10px;">
+                </div>
+                <div
+                    style="height: 150px; width: 65%; border: 1px gainsboro solid; border-radius: 10px 10px 10px 0; display: flex; flex-direction: column; justify-content: center;">
+                    <div style="padding-left: 30px;">
+                        <p>Total balance</p>
+                        <span
+                            style="font-size: 40px; font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: purple;">&#8358;0.00</span>
+                    </div>
+                    <hr>
+                    <p style="text-align: center; margin-top: 20px;"> Learn More</p>
+                </div>
+            </div><br><br><br>
+            <div style="height: 300px; width: 65%; border: 1px gainsboro solid; border-radius: 10px 10px 10px 0;">
+                <div
+                    style="padding-left: 30px; display: flex; flex-direction: column; justify-content: center; height: 50px;">
+                    <span>
+                        <span id="myInvestmentIcon" style="margin-right: 10px; text-decoration: underline;"> <i
+                                class="fa fa-bullseye" style="color: purple; margin-right: 5px; font-size: 24px;"></i>My
+                            Investment</span>
+                        <span id="exploreIcon" style="margin-right: 10px;"><i class="fa fa-bullseye"
+                                style="color: grey; margin-right: 5px; font-size: 24px;"></i>Explore</span>
+                        <span id="completedIcon" style="margin-right: 10px;"><i class="fa fa-bullseye"
+                                style="color: grey; margin-right: 5px; font-size: 20px;"></i>Completed</span>
+
+                    </span>
+                </div>
+                <hr>
+                <div style=" padding-top: 20px; text-align: center;">
+                    <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: purple; ">
+                        Start Investing!</h1>
+                    <p>Start Investing in verified opportunites. let's help you get started</p><br>
+                    <button
+                        style="background-color: purple; color:white; border: none; width: 150px; height: 40px; border-radius: 10px 10px 10px 0;">Invest
+                        now</button><br><br>
+                    <button
+                        style="border: 1px purple solid; color: purple; width: 150px; height: 40px; border-radius: 10px 10px 10px 0;">Learn
+                        More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="acounts" class="acounts">
+        <div class="top">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">My Account</h1>
+            <p id="customer-namess"></p><br><br>
+        </div>
+        <div style="height: 100%; width: 70%; float: right;">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <div class="profile-picture"
+                    style="width: 120px; height: 120px; display: flex; justify-content: center; align-items: center; border-radius: 50%; overflow: hidden;">
+                    <img src="./default_avatar_v4.png" alt="" style="width: 100%; height: 100%;" id="profilephoto">
+                    <div class="hover-effect" onclick="changeProfilePicture()">
+                        <img src="./material-symbols_add-circle-rounded.png" alt="" style="width: 20px;"><br>
+                        <span style="font-size: 10px;">Select Picture</span>
+                    </div>
+                    <input type="file" name="" id="fileInput" style="display: none;" accept="image/*"
+                        onchange="previewImage(this)">
+                </div><br>
+            </div>
+            <h1 style="text-align: center; margin-bottom: 50px;" id="customer-names"></h1>
+            <div class="default" style="width: 100%;">
+                <div>
+                    <h3>Get Flex Number</h3>
+                    <P>Add BVN or NIN</P>
+                </div>
+                <div>
+                    <h3>0</h3>
+                    <P>Piggy point</P>
+                </div>
+                <div>
+                    <h3># piggylink ID</h3>
+                    <P>Create a piggylink ID</P>
+                </div>
+                <div>
+                    <h3>&#8358;0</h3>
+                    <P>Referral Earnings</P>
+                </div>
+            </div>
+            <span>
+                <label class="switch" style="float: right;" onclick="refresh()">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: 100px;">show
+                    dashboard balance</h3>
+            </span>
+        </div>
+        <div class="account-box" style="width: 30%;">
+            <img src="./2-factor-min.png" alt="" style="width: 100%; height: 120px; border-radius: 10px;"><br><br>
+            <div><span><i class="fa fa-percent" style="font-weight: 600;"></i> Today's
+                    Rate</span></div>
+            <div><span><i class="fas fa-user"></i> My Account Settings</span></div>
+            <div><span><i class="fa fa-paperclip" style="font-weight: 600;"></i> Self Help</span></div>
+            <div><span><i class="fa fa-user-check" style="font-weight: 600;"></i> Verify Your Email</span></div>
+            <div><span><i class="fa fa-lock" style="font-weight: 600;"></i> Add Your Bvn or NIN</span></div>
+            <div><span><i class="fa fa-share-alt" style="font-weight: 600;"></i>Refer And Earn &#8358;1,000.00</span>
+            </div>
+            <div><span><i class="fa fa-dollar-sign" style="font-weight: 600;"></i> Withdra Funds</span></div>
+            <div><span><i class="fa fa-credit-card"></i> My Card & Bank Settings</span></div>
+            <div><span><i class="far fa-comment"></i> My Story</span></div>
+            <div><span><i class="fa fa-book" style="font-weight: 600;"></i>View piggyvest Library</span> </div>
+            <div><span><i class="fa fa-phone-alt" style="font-weight: 600;"></i> Contact Us</span></div>
+            <div style="color: red;"><span><i class="fa fa-sign-out-alt" style="font-weight: 600;"></i>Log Out</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+<script>
+//getting the currently logged in customer from the local storage
+let currentUser = JSON.parse(localStorage.getItem('piggyvest'));
+console.log(currentUser);
+
+if (!currentUser) {
+    window.location.href = "./piggyvest.html";
+}
+
+
+
+
+//passing the current user first name to variable customerName
+let customerName = currentUser.firstName;
+console.log(customerName);
+
+//displaying the current customer first name on the dashboard
+document.getElementById("customer-name").innerHTML = customerName;
+document.getElementById("customer-names").innerHTML = customerName;
+document.getElementById("customer-namess").innerHTML = customerName;
+
+//passing the current customer account balance into a variable
+let accountBalance = currentUser.accountBalance.toLocaleString();
+
+
+//displaying the current customer account balance on the dashboard
+document.getElementById("balance").innerHTML = accountBalance;
+    document.getElementById("balances").innerHTML = accountBalance;
+    document.getElementById("balancess").innerHTML = accountBalance;
+
+//displaying the current customer account number
+document.getElementById("bankEase-account").innerHTML = currentUser.accountNumber;
+
+// function displayProfileImage() {
+//     document.getElementById("displaypictureTag").innerHTML = `
+//     <img src="${currentUser.profilePicture}" alt="" class="avatar rounded-circle" onclick="gotoSettings()">
+//     `
+// }
+
+// displayProfileImage();
+
+
+    let transfermoney = document.getElementById("transfermoney")
+    let transfer = document.getElementById("transferPage")
+    let invests = document.getElementById("invests");
+    let acounts = document.getElementById("acounts");
+    let saves = document.getElementById("saves");
+    let homes = document.getElementById("homess");
+    let savings = document.getElementById("savings");
+    let profilephoto = document.getElementById("profilephoto")
+
+    saves.style.display = "none";
+    acounts.style.display = "none";
+    invests.style.display = "none";
+
+   
+
+    function changeProfilePicture() {
+        document.getElementById('fileInput').click();
+    }
+
+    function previewImage(input) {
+        const file = input.file[0];
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const profilePicture = profilephoto
+                profilePicture.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+
+    function TransferBtn() {
+
+        transfer.style.display = "block"
+        setInterval(() => {
+            transfer.style.right = "0"
+        }, 1000);
+
+
+    }
+    function cancel() {
+        transfer.style.right = "-400"
+        transfer.style.display = "none"
+    }
+
+    let myInvestmentIcon = document.getElementById("myInvestmentIcon");
+    let exploreIcon = document.getElementById("exploreIcon");
+    let completedIcon = document.getElementById("completedIcon");
+
+    myInvestmentIcon.addEventListener("click", () => {
+        myInvestmentIcon.querySelector("i").style.color = "purple";
+        exploreIcon.querySelector("i").style.color = "grey";
+        completedIcon.querySelector("i").style.color = "grey";
+        myInvestmentIcon.style.textDecoration = "underline";
+        exploreIcon.style.textDecoration = "none";
+        completedIcon.style.textDecoration = "none";
+    });
+
+    exploreIcon.addEventListener("click", () => {
+        myInvestmentIcon.querySelector("i").style.color = "grey";
+        exploreIcon.querySelector("i").style.color = "purple";
+        completedIcon.querySelector("i").style.color = "grey";
+        myInvestmentIcon.style.textDecoration = "none";
+        exploreIcon.style.textDecoration = "underline";
+        completedIcon.style.textDecoration = "none";
+    });
+
+    completedIcon.addEventListener("click", () => {
+        myInvestmentIcon.querySelector("i").style.color = "grey";
+        exploreIcon.querySelector("i").style.color = "grey";
+        completedIcon.querySelector("i").style.color = "purple";
+        myInvestmentIcon.style.textDecoration = "none";
+        exploreIcon.style.textDecoration = "none";
+        completedIcon.style.textDecoration = "underline";
+    });
+
+    function Logout(){
+        window.location.href = "./piggyvest.html";
+        localStorage.removeItem("piggyvest");
+    }
+
+    function refresh() {
+        // window.location.reload()
+    }
+
+    function showHome() {
+        homes.style.display = "block";
+        saves.style.display = "none";
+        acounts.style.display = "none";
+        invests.style.display = "none";
+    }
+
+    function showSavings() {
+        homes.style.display = "none";
+        saves.style.display = "block";
+        acounts.style.display = "none";
+        invests.style.display = "none";
+    }
+
+    function showInvests() {
+        homes.style.display = "none";
+        saves.style.display = "none";
+        acounts.style.display = "none";
+        invests.style.display = "block";
+    }
+
+    function showAccounts() {
+        homes.style.display = "none";
+        saves.style.display = "none";
+        acounts.style.display = "block";
+        invests.style.display = "none";
+    }
+
+    function home(event) {
+        let labels = document.getElementsByClassName("label");
+        for (let i = 0; i < labels.length; i++) {
+            labels[i].style.backgroundColor = "";
+            labels[i].style.color = "white";
+            labels[i].style.borderRadius = "";
+            labels[i].style.padding = "";
+        }
+        event.target.style.backgroundColor = "white";
+        event.target.style.color = "darkblue";
+        event.target.style.borderRadius = "5px 5px 5px 0";
+        event.target.style.padding = "5px 15px";
+    }
+
+
+
+
+   
+
+let confirmPage = document.getElementById("confirmation-page");
+let allBankEaseUser = JSON.parse(localStorage.getItem("piggycustomers"));
+let currentCustomer = JSON.parse(localStorage.getItem('piggyvest'));
+let recipient = JSON.parse(localStorage.getItem('beneficiary'));
+console.log(currentCustomer);
+
+
+let inputBankEaseAccountNumber = document.getElementById("input-accountNumber");
+let verificationDisplayNotFound = document.getElementById("display-verification-result-notfound");
+let verificationDisplayFound = document.getElementById("display-verification-result-found");
+
+let transferButton = document.getElementById("transfer-btn");
+let amountTag = document.getElementById("amount-to-transfer");
+let accountDetailsTag = document.getElementById("account-details");
+
+transferButton.style.color = "red"
+
+//display none the elements
+verificationDisplayFound.style.display = "none";
+verificationDisplayNotFound.style.display = "none";
+
+let beneficiaryAccount;
+
+
+//this function checks if the account exist or not before proced=eding with the transaction
+function verifyAccountNumber() {
+    if (inputBankEaseAccountNumber.value.length == 10) {
+        beneficiaryAccount = inputBankEaseAccountNumber.value;
+        let beneficiary = allBankEaseUser.find(user => user.accountNumber == beneficiaryAccount);
+
+        if (beneficiary) {
+            setTimeout(() => {
+                verificationDisplayFound.style.display = "block";
+                verificationDisplayFound.value = beneficiary.firstName.toUpperCase();
+                localStorage.setItem('beneficiary', JSON.stringify(beneficiary));
+                console.log(beneficiary);
+            }, 1000);
+        } else {
+            setTimeout(() => {
+                verificationDisplayNotFound.style.display = "block";
+                verificationDisplayNotFound.value = "Account details verification failed, check the details and try again";
+            }, 1000);
+        }
+    }
+    else if (inputBankEaseAccountNumber.value.length < 10) {
+        verificationDisplayFound.style.display = "none";
+        verificationDisplayNotFound.style.display = "none";
+    }
+    else if (inputBankEaseAccountNumber.value.length > 10) {
+        inputBankEaseAccountNumber.value = inputBankEaseAccountNumber.value.slice(0, 10);
+    }
+}
+
+//getting the id of the screen that displays the transfer amount
+let transferAmount = document.getElementById("transfer-amount");
+
+function checkTransferAmount() {
+
+
+    if (transferAmount.value.length < 3) {
+        // Transfer amount is less than or equal to 3
+        transferButton.disabled = true
+        transferButton.style.color = "red";
+    } else {
+        // Transfer amount is greater than 3
+        transferButton.disabled = false
+        transferButton.style.color = "white";
+    }
+}
+
+
+
+//this function adds comma(,) to the number after each 3 digits
+function addCommasToNumber(num) {
+    const parts = num.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
+}
+
+
+//this function pops out the confirmation page for the user to confirm if he/she actually wants to proceed with the transction
+function gotoConfirmationPage() {
+    console.log("Function called");
+    let recipient = JSON.parse(localStorage.getItem('beneficiary'));
+    console.log(recipient);
+    if (verificationDisplayFound.style.display == "none") {
+        alert("Please enter the beneficiary account")
+    } else {
+        confirmPage.style.display = "block";
+    setTimeout(() => {
+        transfermoney.style.display = "none"
+        confirmPage.style.display = "block";
+    }, 250);
+    console.log(transferAmount.value);
+    //displaying the transfer amount
+    amountTag.innerHTML = Number(transferAmount.value).toLocaleString();
+
+    //displaying the beneficiary account name
+    accountDetailsTag.innerHTML = recipient.firstName;
+    }
+    
+}
+
+//this function returns the user back to the transfer page 
+function goBack() {
+    // localStorage.removeItem('beneficiary');
+    confirmPage.style.display = "none";
+    transfermoney.style.display = "block";
+}
+
+let firstPinInput = document.getElementById("passDigit1");
+let transactionPinPage = document.getElementById('enter-transaction-pin');
+function gotoEnterTransferPin() {
+    transactionPinPage.style.display = "block";
+    firstPinInput.focus();
+    setTimeout(() => {
+        transactionPinPage.style.bottom = "0px";
+    }, 250);
+}
+
+
+function enterPin(btn) {
+    firstPinInput.focus();
+    firstPinInput.value = btn;
+}
+
+function closeModal() {
+    transactionPinPage.style.display = "none";
+}
+
+//this function moves the focus from the current input to the nextinput on input event
+function moveToNext(currentInput, nextInputId) {
+    var inputValue = currentInput.value;
+
+    if (inputValue.length === 1) {
+        document.getElementById(nextInputId).focus();
+    }
+
+}
+
+
+//this function checks if all the inputs are filled and concatenate each input field value inside a variable
+function validatesPin() {
+    let pinDigits = '';
+    let pinInputs = document.querySelectorAll('input[type="password"]');
+
+    for (let i = 0; i < pinInputs.length; i++) {
+        if (pinInputs[i].value === '') {
+            // Empty field found, display an error message or handle the validation failure
+            alert('Please fill in all PIN digits');
+            return;
+        }
+        pinDigits += pinInputs[i].value;
+    }
+
+    //getting the beneficiary details by searcining with the beneficiary account number
+    let foundBeneficiary = allBankEaseUser.find(user => user.accountNumber == beneficiaryAccount);
+    console.log(foundBeneficiary);
+
+    //passing the beneficiary first name and last name inside a variable
+    let beneficiaryName = foundBeneficiary.firstName;
+    console.log(beneficiaryName);
+
+    //passing the current customer first name and last name inside a variable
+    let currentCustomerName = currentCustomer.firstName;
+    console.log(currentCustomerName);
+
+    //findind the index of the currentCustomer from the allBankEaseUser local storage
+    let currentCustomerIndex = allBankEaseUser.findIndex(user => user.accountNumber == currentCustomer.accountNumber)
+    console.log(currentCustomerIndex);
+
+    //finding the index of the recipient from the allBankEaseUser local storage
+    let recipientIndex = allBankEaseUser.findIndex(user => user.accountNumber == foundBeneficiary.accountNumber)
+    console.log(recipientIndex);
+
+
+    // All PIN digits are filled, proceed with further actions
+    console.log('PIN entered:', pinDigits);
+    if (currentCustomer.transactionPin == pinDigits) {
+        //transaction is successful
+
+        if (currentCustomer.accountBalance < transferAmount.value) {
+            document.getElementById("loader").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("loader").style.display = "none";
+            }, 2000);
+            setTimeout(() => {
+                alert("Insufficient Fund");
+                for (let i = 0; i < pinInputs.length; i++) {
+                    pinInputs[i].value = '';
+                }
+            }, 2500);
+        } else {
+            //getting the currentCustomer account balance after a successful transaction
+            currentCustomer.accountBalance -= transferAmount.value;
+            console.log("currentUser accountBalance: " + currentCustomer.accountBalance);
+            localStorage.setItem('piggyvest', JSON.stringify(currentCustomer));
+
+
+            //getting the recipient account balance after a successful transaction
+            foundBeneficiary.accountBalance += Number(transferAmount.value);
+            console.log("beneficiary accountBalance: " + foundBeneficiary.accountBalance);
+            localStorage.setItem('piggycustomers', JSON.stringify(allBankEaseUser));
+            
+
+            //updating the currentCustomer account balance after a successful transaction
+            allBankEaseUser[currentCustomerIndex].accountBalance = currentCustomer.accountBalance;
+
+            //updating the recipient account balance after a successful transaction
+            allBankEaseUser[recipientIndex].accountBalance = foundBeneficiary.accountBalance;
+
+            localStorage.removeItem('beneficiary');
+
+            document.getElementById("loader").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById('successful-div').style.display = "block";
+                document.getElementById("transfer-successful-amount").innerHTML = Number(transferAmount.value).toLocaleString();
+            }, 2000);
+
+            //creating instant of Date() class
+            const date = new Date();
+
+            const options = {
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            };
+
+            //formatting the date to this format May 28 at 12:50 PM
+            const formattedDate = date.toLocaleString('en-US', options);
+
+            console.log(formattedDate);
+
+            //generating a reference ID for the transaction
+            let referenceID = Math.floor(Math.random() * Number(1000000000000000));
+
+
+            //pushing some of the transaction data to transactionHistory local storage
+            let moneySentData = {
+                transactionType: "Money Sent",
+                receipientAccountName: beneficiaryName,
+                receipientAccountNumber: foundBeneficiary.accountNumber,
+                senderAccountName: currentCustomerName,
+                senderAccountNumber: currentCustomer.accountNumber,
+                transactionTime: formattedDate,
+                transactionYear: date.getFullYear(),
+                transferAmount: transferAmount.value,
+                transactionReference: referenceID
+            }
+
+            let moneyReceivedData = {
+                transactionType: "Money Received",
+                receipientAccountName: beneficiaryName,
+                receipientAccountNumber: foundBeneficiary.accountNumber,
+                senderAccountName: currentCustomerName,
+                senderAccountNumber: currentCustomer.accountNumber,
+                transactionTime: formattedDate,
+                transactionYear: date.getFullYear(),
+                transferAmount: transferAmount.value,
+                transactionReference: referenceID
+
+            }
+
+            //printing all the required data on the receipt
+            // document.getElementById("receipt-amount").innerHTML = Number(transferAmount.value).toLocaleString();
+            // document.getElementById("receipt-transaction-type").innerHTML = "Money Sent";
+            // document.getElementById("transaction-date").innerHTML = formattedDate;
+            // document.getElementById("receipient-name").innerHTML = beneficiaryName;
+            // document.getElementById("receipient-account").innerHTML = foundBeneficiary.accountNumber;
+            // document.getElementById("sender-name").innerHTML = currentCustomerName;
+            // document.getElementById("sender-account").innerHTML = currentCustomer.accountNumber;
+            // document.getElementById("reference").innerHTML = referenceID;
+
+            //pushing the transaction data of the money sent into the currentCustomer transactionHistory field after a successful transaction
+            allBankEaseUser[currentCustomerIndex].transactionHistory.push(moneySentData);
+
+            //updating the current user transactionHistory by pushing the data of the money sent into the currentCustomer transactionHistory field after a successful transaction
+            currentCustomer.transactionHistory.push(moneySentData);
+
+            //pushing the transaction data of the money received into the beneficiary transactionHistory field after a successful transaction
+            allBankEaseUser[recipientIndex].transactionHistory.push(moneyReceivedData);
+
+            //updating the current user details in the local storage
+            localStorage.setItem('piggyvest', JSON.stringify(currentCustomer));
+
+            //updating all the bankEase users details in the local storage
+            localStorage.setItem('piggycustomers', JSON.stringify(allBankEaseUser));
+
+            let phone = 0;
+           let hameed =
+                setInterval(() => {
+                    phone++
+                    console.log(hameed)
+                    if (phone == 5) {
+                        clearInterval(hameed);
+                        window.location.reload();
+                    }
+                }, 1000);
+
+        }
+
+    } else {
+        alert("Invalid Transaction Pin")
+        for (let i = 0; i < pinInputs.length; i++) {
+            pinInputs[i].value = '';
+        }
+        pinInputs[0].focus();
+    }
+}
+
+// let PDFImageModal = document.getElementById("pdfImageModal");
+// PDFImageModal.style.display = "none";
+
+// document.getElementById("btn-line").style.display = "none";
+
+// //this function closes the PDF-Image button div
+// function closePDFImageModal() {
+//     PDFImageModal.style.display = "none";
+// }
+
+// //this function opens the PDF-Image button div
+// function openPDFImageModal() {
+//     PDFImageModal.style.display = "block";
+// }
+
+// let content = document.getElementById("receipt-content");
+// content.style.display = "none";    
+
+// function closeReceiptModal() {
+//     content.style.display = "none";    
+// }
+
+// function openReceiptContent() {
+//     content.style.display = "block";    
+// }
+
+function generateImage() {
+    document.getElementById("share-btn-div").style.display = "none";
+    document.getElementById("btn-line").style.display = "block";
+    document.getElementById("receipt-header").style.display = "none";
+    document.getElementById("support-text").style.display = "none";
+    document.getElementById("hr").style.display = "none";
+    PDFImageModal.style.display = "none";
+    setTimeout(() => {
+        html2canvas(content)
+            .then(function (canvas) {
+                const image = canvas.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.href = image;
+                link.download = 'BankEaseTransaction_Receipt.png';
+                link.click();
+            });        
+    }, 1500);
+}
+
+function generatePDF() {
+
+    html2canvas(content)
+        .then(function (canvas) {
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            pdf.addImage(imgData, 'PNG', 0, 0);
+            pdf.save('page_document.pdf');
+        });
+}
+</script>
+
+
+
+</html>

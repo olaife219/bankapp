@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>piggyvest-Dashboard</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.webp">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- Google font Roboto -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .signin {
+            margin-top: 100px;
+        }
+
+        body {
+            background-color: RGB(6, 40, 99);
+        }
+
+        .sign {
+            border: 2px solid white;
+            margin: auto;
+            border-radius: 15px 15px 15px 0;
+            background-color: white;
+            padding: 30px;
+            width: 30%;
+            height: 300px;
+            text-align: center;
+        }
+
+        .sign button {
+            width: 98%;
+            height: 50px;
+            background-color: blue;
+            color: white;
+            border: 1px solid blue;
+            border-radius: 10px;
+        }
+
+        .logo {
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #account-number {
+            font-size: 34px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signin">
+        <div class="logo">
+            <img src="./piggyvest-logo2.svg" class="logo" alt="piggyvest logo">&nbsp;
+        </div>
+        <main class="sign">
+            <h5>Thank you <b id="account-holder-name"></b><br>
+                for choosing PiggyVest</h5><br><br>
+
+            <p>Here is your<br>Account Number</p>
+            <h6 id="account-number"></h6><br><br>
+            <div>
+                <button onclick="gotoSignIn()">Continue</button>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script>
+        //fetching the registered customers from the local storage
+        let registeredCustomer = JSON.parse(localStorage.getItem('piggycustomers'));
+
+        //getting the array index of the current registered customer
+        let currentRegisteredCustomer = registeredCustomer.length - 1;
+
+
+        //displaying the name of the current registered customer
+        document.getElementById('account-holder-name').innerHTML = registeredCustomer[currentRegisteredCustomer].firstName;
+
+        let accountDigit;
+
+        //tis function generates the account number
+        function generateAccount() {
+            accountDigit = Math.floor(Math.random() * (3030999999 - 3030000000 + 1)) + 3030000000;
+            //displaying the account number for the user to see so it can be noted down
+            document.getElementById('account-number').innerHTML = accountDigit;
+        }
+        //self invoking function
+        generateAccount();
+
+        //showing all the registered customer on console
+        console.log(registeredCustomer);
+
+        //this function saves the modified customer data back to the local storage and then proceed to the next page
+        function gotoSignIn() {
+            //checking if the generated account already exist in the registerCustomer array
+            let found = registeredCustomer.find(acc => acc.accountNumber == accountDigit);
+            if (found) {
+                //generating another account
+                generateAccount();
+            } else {
+                //setting the index of the current registered customers to update their data by adding account number to their data
+                registeredCustomer[currentRegisteredCustomer].accountNumber = accountDigit;
+
+                //saving into the local storage with the updated customer details
+                localStorage.setItem('piggycustomers', JSON.stringify(registeredCustomer));
+
+                //navigating to the login page
+                window.location.href = "./transactionPin.html";
+            }
+        }
+    </script>
+</body>
+
+</html>
